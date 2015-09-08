@@ -1,0 +1,24 @@
+<%- include header%>
+<form method = "post">
+    Title: <br />
+    <label>
+        <input type="text" name="title" value="<%= post.title %>" disabled>
+    </label><br />
+    Content: <br />
+    <label>
+        <textarea name="post" rows="20" cols="100"><%= post.post %></textarea>
+    </label><br />
+    <!-- TODO Enable customized amount of tags-->
+    Tag(s): <br />
+    <label>
+        <input type = "text" name = "tag1" value = "<%= post.tags[0] %>"/>
+    </label>
+    <label>
+        <input type = "text" name = "tag2" value = "<%= post.tags[1] %>"/>
+    </label>
+    <label>
+        <input type = "text" name = "tag3" value = "<%= post.tags[2] %>"/>
+    </label><br />
+    <input type = "submit" value = "Save" />
+</form>
+<%- include footer%>

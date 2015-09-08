@@ -1,0 +1,26 @@
+<%- include header %>
+<form method = "post">
+    Title: <br />
+    <label>
+        <input type = "text" name = "title"/>
+    </label><br />
+    Content: <br />
+    <label>
+        <textarea name = "post" rows = "20" cols = "100"></textarea>
+    </label><br />
+    <!-- TODO Enable customized amount of tags-->
+    Tag(s): <br />
+    <label>
+        <input type = "text" name = "tag1"/>
+    </label>
+    <label>
+        <input type = "text" name = "tag2"/>
+    </label>
+    <label>
+        <input type = "text" name = "tag3"/>
+    </label><br />
+    <label>
+        <input type = "submit" value = "Submit" />
+    </label>
+</form>
+<%- include footer%>

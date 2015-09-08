@@ -1,0 +1,45 @@
+<br />
+<% post.comments.forEach(function(comment, index) { %>
+    <!-- TODO Add "Floor Number", page turning, and delete function here-->
+    <p>
+        <a href = "<%= comment.website %>">
+            <%= comment.name %>
+        </a>
+        <span class = "info">
+            Replied on <%= comment.time %>
+        </span>
+    </p>
+    <p>
+        <%- comment.content %>
+    </p>
+<% }) %>
+
+<form method = "post">
+    <% if (user) { %>
+    Name: <label>
+        <input type = "text" name = "name" value = "<%= user.name %>"/>
+    </label><br />
+    Email: <label>
+        <input type = "text" name = "email" value = "<%= user.email %>"/>
+    </label><br />
+    Website: <label>
+        <input type = "text" name = "website" value = "/u/<%= user.name %>" />
+    </label><br />
+    <% } else { %>
+    <!-- TODO Try to have some sort of anonymous comment -->
+    <!-- Disabled for users that haven't logged in
+    Name: <label>
+        <input type = "text" name = "name"/>
+    </label><br />
+    Email: <label>
+        <input type = "text" name = "email"/>
+    </label><br />
+    Website: <label>
+        <input type = "text" name = "website"/>
+    </label><br />-->
+    <% } %>
+    <label>
+        <textarea name="content" rows="5" cols="80"></textarea>
+    </label><br />
+    <input type = "submit" value = "Submit" />
+</form>

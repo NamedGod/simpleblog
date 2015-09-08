@@ -1,0 +1,19 @@
+<%- include header %>
+<% posts.forEach(function(post, index) { %>
+<p><h2><a href = "/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
+<p class = "info">
+    Author: <a href = "/u/<%= post.name %>"><%= post.name%></a>
+    Time: <%= post.time.minute %>
+    Tag(s):
+    <% post.tags.forEach(function(tag, index) { %>
+        <% if (tag) { %>
+            <a class = "tag" href="/tags/<%= tag %>">
+                <%= tag %>
+            </a>
+        <% } %>
+    <% }) %>
+</p>
+<p><%- post.post %></p>
+<% }) %>
+<%- include paging %>
+<%- include footer %>

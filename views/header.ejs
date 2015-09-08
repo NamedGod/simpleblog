@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8" />
+    <title> Blog </title>
+    <link rel = "stylesheet" href = "/stylesheets/style.css">
+</head>
+<body>
+
+<header>
+    <h1><%= title %></h1>
+</header>
+<nav>
+    <span><a title = "Home" href = "/">home</a></span>
+    <span><a title = "Archive" href = "/archive">archive</a></span>
+    <span><a title = "Tags" href = "/tags">tags</a></span>
+    <% if (user) { %>
+    <!-- <span><a title = "Upload" href = "/upload">upload</a></span> -->
+    <span><a title = "Post" href = "/post">post</a></span>
+    <span><a title = "Log Out" href = "/logout">logout</a></span>
+    <% } else { %>
+    <span><a title = "Log In" href = "/login">login</a></span>
+    <span><a title="Register" href="/reg">register</a></span>
+    <% } %>
+</nav>
+
+<article>
+    <% if (success) { %>
+    <div><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div><%= error %></div>
+    <% } %>
